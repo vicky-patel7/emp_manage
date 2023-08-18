@@ -1,0 +1,35 @@
+{{>header}}
+{{>navbar}}
+
+<div class="container-fluid m-4 p-4">
+    <form class="row g-3" action="/updateEmployee/{{employee._id}}" method="post">
+        <div class="col-md-6 hidden">
+            <label for="empId" class="form-label"></label>
+            <input type="hidden" class="form-control" id="empId" name="empId">
+        </div>
+        <div class="col-md-6">
+            <label for="newName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="newName" name="newName" value="{{employee.name}}">
+        </div>
+        <div class="col-md-6">
+            <label for="newSurname" class="form-label">Surname</label>
+            <input type="text" class="form-control" id="newSurname" name="newSurname" value="{{employee.surname}}">
+        </div>
+        <div class="col-md-4">
+            <label for="newDepartment" class="form-label">Department</label>
+            <select id="newDepartment" class="form-select" name="newDepartment">
+                <option value="" selected>Choose...</option>
+                <option>General Dentistry</option>
+                <option>Pediatric Dentistry</option>
+                <option>Restorative Dentistry</option>
+                <option>Surgery</option>
+                <option>Orthodontics</option>
+            </select>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Update Employee</button>
+        </div>
+    </form>
+</div>
+
+{{>footer}}

@@ -1,0 +1,30 @@
+{{> header}}
+{{>navbar}}
+<div class="container-fluid m-4 p-4">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Department</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        {{#if employeeData}}
+        <tbody>
+            {{#each employeeData}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{surname}}</td>
+                <td>{{department}}</td>
+                <td><a href="/updateEmployee/{{_id}}" class="btn btn-primary">Update</a></td>
+                <td><a href="/deleteEmployee/{{_id}}" class="btn btn-secondary">Delete</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+        {{/if}}
+    </table>
+</div>
+
+{{>footer}}

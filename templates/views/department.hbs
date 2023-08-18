@@ -1,0 +1,19 @@
+{{>header}}
+{{>navbar}}
+
+
+<div class="container-fluid m-4 p-4">
+    {{#if departmentData}}
+    {{#each departmentData}}
+    <h3>Department Name: {{departmentName}}</h3>
+    <ul>
+        {{#each employeeNames}}
+        <li>{{name}} {{surname}}</li>
+        {{/each}}
+    </ul>
+    {{/each}}
+    {{/if}}
+
+</div>
+
+{{>footer}}
